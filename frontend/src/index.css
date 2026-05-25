@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body { @apply bg-navy-900 text-gray-100 font-sans antialiased; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-navy-800; }
+  ::-webkit-scrollbar-thumb { @apply bg-steel-600 rounded-full; }
+}
+
+@layer components {
+  .card { @apply bg-navy-800 border border-navy-600 rounded-xl p-5 shadow-lg; }
+  .card-sm { @apply bg-navy-800 border border-navy-600 rounded-lg p-4 shadow; }
+  .btn-primary { @apply bg-ocean-600 hover:bg-ocean-500 text-white font-medium px-4 py-2 rounded-lg transition-all duration-150 flex items-center gap-2 text-sm; }
+  .btn-secondary { @apply bg-navy-700 hover:bg-navy-600 text-gray-200 font-medium px-4 py-2 rounded-lg transition-all duration-150 flex items-center gap-2 text-sm border border-navy-500; }
+  .btn-danger { @apply bg-rose-600 hover:bg-rose-500 text-white font-medium px-4 py-2 rounded-lg transition-all duration-150 flex items-center gap-2 text-sm; }
+  .input { @apply bg-navy-700 border border-navy-500 text-gray-100 rounded-lg px-3 py-2 text-sm w-full focus:outline-none focus:border-ocean-400 focus:ring-1 focus:ring-ocean-400 transition-colors placeholder-gray-500; }
+  .select { @apply bg-navy-700 border border-navy-500 text-gray-100 rounded-lg px-3 py-2 text-sm w-full focus:outline-none focus:border-ocean-400 focus:ring-1 focus:ring-ocean-400 transition-colors; }
+  .label { @apply text-xs font-medium text-gray-400 uppercase tracking-wide mb-1 block; }
+  .badge-open { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-ocean-900 text-ocean-300 border border-ocean-700; }
+  .badge-progress { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-900/40 text-amber-300 border border-amber-700/50; }
+  .badge-resolved { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-900/40 text-emerald-300 border border-emerald-700/50; }
+  .badge-closed { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-navy-700 text-gray-400 border border-navy-500; }
+  .tab-active { @apply border-b-2 border-ocean-400 text-ocean-300 font-medium; }
+  .tab-inactive { @apply border-b-2 border-transparent text-gray-400 hover:text-gray-200 hover:border-gray-600; }
+}
+
+.animate-fade-in { animation: fadeIn 0.2s ease-in; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
